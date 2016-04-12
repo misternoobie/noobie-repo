@@ -263,17 +263,7 @@ function collectAssignee(){
 
 
 function displayTickets($staff){
-	/*$dom = new DOMDocument('1.0');//Create new document with specified version number
 
-	$tr = $dom->createElement('tr');
-
-	
-	$td = $dom->createElement('td', 'Buffer');
-	$domAttribute = $dom->createAttribute('class');
-	$domAttribute->value = 'assignee';
-	$td = $dom->createElement('td', $staff->name);
-	$tr->appendChild($td);*/
-	
 	echo "<tr>";
 	echo "<td class='assignee'>". $staff->name ."</td>";
 	echo "<td class='open'>". $staff->displayTicket(KANBAN_STATUS_1) ."". displayTotal($staff,KANBAN_STATUS_1) ."</td>";
@@ -286,10 +276,7 @@ function displayTickets($staff){
 	echo "<td class='onGoing_test'>". $staff->displayTicket(KANBAN_STATUS_8) ."". displayTotal($staff,KANBAN_STATUS_8)."</td>";
 	echo "<td class='forReview'>". $staff->displayTicket(KANBAN_STATUS_9) ."". displayTotal($staff,KANBAN_STATUS_9)."</td>";
 	echo "</tr>";
-	/*
-	$tr->appendChild($domAttribute);
-	$dom->appendChild($tr);
-	echo $dom->saveHTML();        //Outputs the generated source code*/
+
 }
 
 function displayTotal($staff , $kanban_status){
